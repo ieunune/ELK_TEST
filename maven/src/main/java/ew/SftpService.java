@@ -70,7 +70,7 @@ public class SftpService {
     public void fileDownload(){
         BufferedInputStream bis = null; 
         InputStreamReader isr = null; 
-        OutputStreamWriter osw = null;
+        OutputStreamWriter osw = null; 
         OutputStream outStream = null; 
         
         try { 
@@ -92,22 +92,22 @@ public class SftpService {
 
             // Download file
             Writer os = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(newFile),"UTF-8"));
-            BufferedOutputStream bos = new BufferedOutputStream(bis);
-            // os.write("가나다라마바사");
-            // os.close();
+            // BufferedOutputStream bos = new BufferedOutputStream(bis);
+            os.write("가나다라마바사");
+            os.close();
 
-            int readCount = 0;
-            while((readCount = isr.read())>0){
-                bos.write(readCount);
-            }
-            bis.close();
-            bos.close();
-            int readCount;
-            while ((readCount = bis.read(buffer)) > 0) {
-                bos.write(buffer, 0, readCount);
-            }
-            bis.close();
-            bos.close();
+            // int readCount = 0;
+            // while((readCount = isr.read())>0){
+            //     bos.write(readCount);
+            // }
+            // bis.close();
+            // bos.close();
+            // int readCount;
+            // while ((readCount = bis.read(buffer)) > 0) {
+            //     bos.write(buffer, 0, readCount);
+            // }
+            // bis.close();
+            // bos.close();
 
         } catch (Exception e) {
             e.printStackTrace();
